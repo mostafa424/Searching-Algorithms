@@ -1,0 +1,15 @@
+def BinarySearch( sequence,begin_index,end_index,item):
+ 
+  if(end_index>begin_index):
+   midpoint=(begin_index+end_index) // 2
+   if(sequence[midpoint]==item):
+    return midpoint
+   elif(sequence[midpoint]<item):
+    BinarySearch(sequence,begin_index,midpoint,item)
+   elif(sequence[midpoint]>item):
+    BinarySearch(sequence,midpoint+1,end_index,item)
+  else : return "none"
+
+sequence_a=[2,4,5,6,7,8,9,10]
+q=BinarySearch(sequence_a,0,len(sequence_a)-1,1)
+print(q)
