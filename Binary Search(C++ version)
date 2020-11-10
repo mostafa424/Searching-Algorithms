@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int BinarySearch(int a[],int low,int high,int item){
+if(high>=low){
+ int mid=(low+high)/2;
+ if (a[mid]==item) return mid;
+ if(a[mid]>item) return BinarySearch(a,low,mid,item);
+ return BinarySearch(a,mid+1,high,item);
+}
+return -1;
+}
+int main(){
+int arr[]={1,2,3,4,5,6,7,8,9,10,12,15};
+int size_of_arr=sizeof(arr)/sizeof(arr[0]);
+int x=BinarySearch(arr, 0, size_of_arr , 8 );
+cout<<x;
+return 0;
+}
